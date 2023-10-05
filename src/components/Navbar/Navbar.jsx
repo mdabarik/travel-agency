@@ -1,11 +1,8 @@
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../assets/logo.png';
-import { useContext } from 'react';
-import { GlobalContext } from '../../providers/GlobalProvider';
 
 const Navbar = () => {
 
-    const {isLoggedIn, handleLogin} = useContext(GlobalContext);
 
     const navLinks = <>
         <li>
@@ -57,12 +54,10 @@ const Navbar = () => {
 
             {/* login and registration */}
             <div className="navbar-end">
-                {
-                    isLoggedIn ? "Logout" :<Link to="/login">
-                    <button onClick={handleLogin} className='btn btn-warning'>Login</button>
+                <Link to="/login">
+                    <button className='btn btn-warning'>Login</button>
                 </Link>
-                }
-                
+
             </div>
 
         </div>
