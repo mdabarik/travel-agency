@@ -3,6 +3,11 @@ import Home from "../pages/Home/Home";
 import Root from "../components/Root/Root";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import News from "../pages/News/News";
+import Destination from "../pages/Destination/Destination";
+import Blog from "../pages/Blog/Blog";
+import Contact from "../pages/Contact/Contact";
+import PrivateRouter from "./PrivateRouter/PrivateRouter";
 
 const router = createBrowserRouter([
     {
@@ -12,7 +17,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <PrivateRouter><Home></Home></PrivateRouter>
             },
             {
                 path: '/login',
@@ -24,19 +29,19 @@ const router = createBrowserRouter([
             },
             {
                 path: '/news',
-                element: <h2>News Page</h2>
+                element: <PrivateRouter><News></News></PrivateRouter>
             },
             {
                 path: '/destination',
-                element: <h2>Destination Page</h2>
+                element: <PrivateRouter><Destination></Destination></PrivateRouter>
             },
             {
                 path: '/blog',
-                element: <h2>Blog Page</h2>
+                element: <PrivateRouter><Blog></Blog></PrivateRouter>
             },
             {
                 path: '/contact',
-                element: <h2>Contact Page</h2>
+                element: <PrivateRouter><Contact></Contact></PrivateRouter>
             }
         ]
     }

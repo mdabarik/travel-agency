@@ -1,6 +1,15 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, Navigate } from "react-router-dom";
+import { GlobalContext } from "../../providers/GlobalProvider";
 
 const Login = () => {
+
+    const {isLoggedIn} = useContext(GlobalContext);
+
+    if (isLoggedIn) {
+        return <Navigate to="/"></Navigate>
+    }
+
     return (
         <div className="flex flex-col items-center justify-center border-2 w-[60vw] mx-auto rounded-sm py-16 mt-8">
             <div className="flex flex-col gap-6 w-full px-16">
